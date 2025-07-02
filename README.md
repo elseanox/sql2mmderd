@@ -38,7 +38,6 @@ The script generates Mermaid ERD syntax that can be used in:
 ```mermaid
 erDiagram
     JOB_RUNNER {
-        JOB_RUN_ID INT PK
         RUN_ID INT FK
         CREATE_TIME DATETIME
         STATUS VARCHAR
