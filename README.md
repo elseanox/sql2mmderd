@@ -37,15 +37,14 @@ The script generates Mermaid ERD syntax that can be used in:
 
 ```mermaid
 erDiagram
-    BATCH_JOB_EXECUTION {
-        JOB_EXECUTION_ID INT PK
-        VERSION INT
-        JOB_INSTANCE_ID INT FK
+    JOB_RUNNER {
+        JOB_RUN_ID INT PK
+        RUN_ID INT FK
         CREATE_TIME DATETIME
         STATUS VARCHAR
     }
     
-    BATCH_JOB_EXECUTION ||--o{ BATCH_JOB_INSTANCE : "FK to JOB_INSTANCE_ID"
+    JOB_RUNNER ||--o{ JOB_RUN : "FK to RUN_ID"
 ```
 
 ## Requirements
@@ -55,4 +54,4 @@ erDiagram
 
 ## License
 
-MIT License 
+CC0 1.0 Universal 
