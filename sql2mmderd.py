@@ -321,9 +321,7 @@ if __name__ == "__main__":
                 f.write("\n```\n")
             print(f"Mermaid ERD saved to: {output_file_path}")
         else:
-            print("\n--- Generated Mermaid ERD ---\n")
             print(mermaid_output)
-            print("\n---------------------------\n")
 
     except FileNotFoundError:
         print(f"Error: Input file not found at '{input_file_path}'")
