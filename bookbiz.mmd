@@ -1,0 +1,99 @@
+erDiagram
+authors {
+author_id INT
+first_name VARCHAR
+last_name VARCHAR
+email VARCHAR
+phone VARCHAR
+address VARCHAR
+city VARCHAR
+state VARCHAR
+zip VARCHAR
+contract INT
+}
+publishers {
+publisher_id INT
+publisher_name VARCHAR
+contact_name VARCHAR
+phone VARCHAR
+address VARCHAR
+city VARCHAR
+state VARCHAR
+zip VARCHAR
+}
+categories {
+category_id INT
+category_name VARCHAR
+description VARCHAR
+}
+books {
+book_id INT
+isbn VARCHAR
+title VARCHAR
+pub_date DATE
+price DECIMAL
+advance DECIMAL
+royalty DECIMAL
+ytd_sales INT
+notes VARCHAR
+publisher_id INT FK
+}
+book_authors {
+book_id INT FK
+author_id INT FK
+author_order INT
+royalty_percentage DECIMAL
+}
+book_categories {
+book_id INT FK
+category_id INT FK
+}
+customers {
+customer_id INT
+first_name VARCHAR
+last_name VARCHAR
+email VARCHAR
+phone VARCHAR
+address VARCHAR
+city VARCHAR
+state VARCHAR
+zip VARCHAR
+discount DECIMAL
+}
+orders {
+order_id INT
+customer_id INT FK
+order_date DATETIME
+ship_date DATETIME
+ship_address VARCHAR
+ship_city VARCHAR
+ship_state VARCHAR
+ship_zip VARCHAR
+status VARCHAR
+}
+order_items {
+order_id INT FK
+book_id INT FK
+quantity INT
+price DECIMAL
+}
+employees {
+employee_id INT
+first_name VARCHAR
+last_name VARCHAR
+email VARCHAR
+phone VARCHAR
+hire_date DATE
+job_title VARCHAR
+salary DECIMAL
+manager_id INT FK
+}
+books ||--o{ publishers : "FK to publisher_id"
+book_authors ||--o{ books : "FK to book_id"
+book_authors ||--o{ authors : "FK to author_id"
+book_categories ||--o{ books : "FK to book_id"
+book_categories ||--o{ categories : "FK to category_id"
+orders ||--o{ customers : "FK to customer_id"
+order_items ||--o{ orders : "FK to order_id"
+order_items ||--o{ books : "FK to book_id"
+employees ||--o{ employees : "FK to employee_id"
