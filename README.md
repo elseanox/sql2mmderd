@@ -20,10 +20,10 @@ python sql2mmderd.py <input_sql_file> [output_mermaid_file]
 
 ```bash
 # Generate Mermaid ERD and display to console
-python sql2mmderd.py schema.sql
+python sql2mmderd.py bookbiz_schema.sql
 
 # Generate Mermaid ERD and save to file
-python sql2mmderd.py schema.sql output.mmd
+python sql2mmderd.py bookbiz_schema.sql bookbiz.mmd
 ```
 
 ## Output Format
@@ -45,6 +45,10 @@ erDiagram
     
     JOB_RUNNER ||--o{ JOB_RUN : "FK to RUN_ID"
 ```
+
+## Mac OS Visualization
+
+I like Mark Chart: https://apps.apple.com/us/app/markchart-mermaid-editor/id6475648822
 
 ## Requirements
 
